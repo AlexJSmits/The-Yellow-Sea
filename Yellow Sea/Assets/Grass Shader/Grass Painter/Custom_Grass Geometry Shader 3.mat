@@ -28,9 +28,9 @@ Material:
     - _MaxDist: 50
     - _MinDist: 1
     - _Rad: 0.555
-    - _Radius: 2
+    - _Radius: 4
     - _RandomHeight: 0.25
-    - _Strength: 2
+    - _Strength: 1
     - _TessellationUniform: 1
     - _WindSpeed: 100
     - _WindStrength: 0.05
