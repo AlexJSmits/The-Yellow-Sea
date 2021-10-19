@@ -1,6 +1,7 @@
 
 Shader "Custom/Grass Geometry Shader 3" {
     Properties{
+        _TessellationUniform("Tessellation Uniform", Range(1, 64)) = 1
         _BottomColor("Bottom Color", Color) = (0,1,0,1)
         _TopColor("Top Color", Color) = (1,1,0,1)
         _GrassHeight("Grass Height", Float) = 1
@@ -27,7 +28,7 @@ Shader "Custom/Grass Geometry Shader 3" {
 #pragma multi_compile_fwdbase_fullforwardshadows
 #pragma multi_compile_fog
 #define GrassSegments 5 // segments per blade
-#define GrassBlades 4 // blades per vertex
+#define GrassBlades 10 // blades per vertex
 
         struct v2g
     {
