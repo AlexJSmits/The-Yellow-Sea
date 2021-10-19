@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 6641139659893710022}
   - component: {fileID: 6641139659893710021}
   - component: {fileID: 6641139659893710020}
+  - component: {fileID: 6202051239801253445}
   m_Layer: 3
   m_Name: Fan_Body
   m_TagString: Untagged
@@ -11261,6 +11262,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641139659893710018}
   m_Mesh: {fileID: 0}
+--- !u!95 &6202051239801253445
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641139659893710018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2f8ab033c07fd0499000e60c5101032, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6641139659991196683
 GameObject:
   m_ObjectHideFlags: 0
@@ -11571,6 +11591,7 @@ GameObject:
   - component: {fileID: 6641139659995954124}
   - component: {fileID: 6641139659995954123}
   - component: {fileID: 6641139659995954122}
+  - component: {fileID: 1155462207137855602}
   m_Layer: 3
   m_Name: Fan_Body (1)
   m_TagString: Untagged
@@ -22717,6 +22738,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641139659995954119}
   m_Mesh: {fileID: 0}
+--- !u!95 &1155462207137855602
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641139659995954119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2f8ab033c07fd0499000e60c5101032, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6641139660003703819
 GameObject:
   m_ObjectHideFlags: 0
@@ -23814,6 +23854,7 @@ GameObject:
   - component: {fileID: 6641139660101727402}
   - component: {fileID: 6641139660101727401}
   - component: {fileID: 6641139660101727400}
+  - component: {fileID: 2715861892399236716}
   m_Layer: 3
   m_Name: Fan_Body (3)
   m_TagString: Untagged
@@ -34960,6 +35001,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641139660101727397}
   m_Mesh: {fileID: 0}
+--- !u!95 &2715861892399236716
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641139660101727397}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2f8ab033c07fd0499000e60c5101032, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6641139660220002342
 GameObject:
   m_ObjectHideFlags: 0
@@ -37136,7 +37196,7 @@ GameObject:
   - component: {fileID: 7661740731841676116}
   - component: {fileID: 7661740731841676117}
   m_Layer: 3
-  m_Name: Hover_Plane
+  m_Name: Hover_Plane_(Var_1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37228,7 +37288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641139660790474321}
   m_LocalRotation: {x: 0.03286144, y: 0.0286749, z: 0.70652413, w: 0.70634377}
-  m_LocalPosition: {x: -0.00086927414, y: 0.005846301, z: 0.033149365}
+  m_LocalPosition: {x: -0.0008692741, y: 0.005846301, z: 0.033149365}
   m_LocalScale: {x: 0.8300895, y: 1.3780427, z: 0.2637516}
   m_Children: []
   m_Father: {fileID: 6641139659893710023}
@@ -49030,6 +49090,7 @@ GameObject:
   - component: {fileID: 6641139661331526624}
   - component: {fileID: 6641139661331526655}
   - component: {fileID: 6641139661331526654}
+  - component: {fileID: 2406663668484243573}
   m_Layer: 3
   m_Name: Fan_Body (2)
   m_TagString: Untagged
@@ -60176,6 +60237,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641139661331526651}
   m_Mesh: {fileID: 0}
+--- !u!95 &2406663668484243573
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641139661331526651}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2f8ab033c07fd0499000e60c5101032, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6641139661374869962
 GameObject:
   m_ObjectHideFlags: 0
