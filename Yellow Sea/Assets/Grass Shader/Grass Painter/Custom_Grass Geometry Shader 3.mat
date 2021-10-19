@@ -23,12 +23,12 @@ Material:
     - _AmbientStrength: 0.5
     - _BladeCurve: 2
     - _BladeForward: 0.38
-    - _GrassHeight: 10
+    - _GrassHeight: 1.5
     - _GrassWidth: 0.06
-    - _MaxDist: 100
-    - _MinDist: 0
+    - _MaxDist: 50
+    - _MinDist: 1
     - _Rad: 0.555
-    - _Radius: 1.75
+    - _Radius: 2
     - _RandomHeight: 0.25
     - _Strength: 2
     - _TessellationUniform: 1
