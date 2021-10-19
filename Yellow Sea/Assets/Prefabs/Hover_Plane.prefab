@@ -35014,7 +35014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641139660283727824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6641139660673247593}
@@ -37171,8 +37171,8 @@ Rigidbody:
   m_GameObject: {fileID: 6641139660673247592}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.35
-  m_AngularDrag: 2.03
+  m_Drag: 0.5
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -37194,7 +37194,6 @@ MonoBehaviour:
   forwardThrust: 400
   turnThrust: 300
   hoverSensorRange: 10
-  hoverHeight: 3
   propulsion: {fileID: 6641139661432385695}
   centerMass: {fileID: 6641139660283727824}
   sensors:
@@ -61979,7 +61978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641139661432385695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6641139660673247593}
