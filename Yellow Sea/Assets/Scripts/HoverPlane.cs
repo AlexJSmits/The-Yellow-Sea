@@ -22,6 +22,9 @@ public class HoverPlane : MonoBehaviour
     {
         rB = GetComponent<Rigidbody>();
         rB.centerOfMass = centerMass.transform.localPosition;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
