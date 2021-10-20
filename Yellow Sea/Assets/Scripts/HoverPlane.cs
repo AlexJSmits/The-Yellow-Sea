@@ -1,50 +1,116 @@
+﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class HoverPlane : MonoBehaviour
 {
+  Rigidbody m_body;
+  float m_deadZone = 0.1f;
 
-    public float upwardThrust = 250;
-    public float forwardThrust = 400f;
-    public float turnThrust = 300f;
-    public float hoverSensorRange;
-    //public float hoverHeight;
-    [Space]
-    public GameObject propulsion;
-    public GameObject centerMass;
-    public GameObject[] sensors;
+  public float m_hoverForce = 9.0f;
+  public float m_hoverHeight = 2.0f;
+  public GameObject[] m_hoverPoints;
 
-    private Rigidbody rB;
-    private RaycastHit hit;
+  public float m_forwardAcl = 100.0f;
+  public float m_backwardAcl = 25.0f;
+  float m_currThrust = 0.0f;
 
-    private void Start()
+  public float m_turnStrength = 10f;
+  float m_currTurn = 0.0f;
+
+  int m_layerMask;
+
+  void Start()
+  {
+    m_body = GetComponent<Rigidbody>();
+
+    m_layerMask = 1 << LayerMask.NameToLayer("Characters");
+    m_layerMask = ~m_layerMask;
+  }
+
+  void OnDrawGizmos()
+  {
+
+    //  Hover Force
+    RaycastHit hit;
+    for (int i = 0; i < m_hoverPoints.Length; i++)
     {
-        rB = GetComponent<Rigidbody>();
-        rB.centerOfMass = centerMass.transform.localPosition;
+      var hoverPoint = m_hoverPoints [i];
+      if (Physics.Raycast(hoverPoint.transform.position, 
+                          -Vector3.up, out hit,
+                          m_hoverHeight, 
+                          m_layerMask))
+      {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(hoverPoint.transform.position, hit.point);
+        Gizmos.DrawSphere(hit.point, 0.5f);
+      } else
+      {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(hoverPoint.transform.position, 
+                       hoverPoint.transform.position - Vector3.up * m_hoverHeight);
+      }
+    }
+  }
+	
+  void Update()
+  {
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+    // Main Thrust
+    m_currThrust = 0.0f;
+    float aclAxis = Input.GetAxis("Vertical");
+    if (aclAxis > m_deadZone)
+      m_currThrust = aclAxis * m_forwardAcl;
+    else if (aclAxis < -m_deadZone)
+      m_currThrust = aclAxis * m_backwardAcl;
+
+    // Turning
+    m_currTurn = 0.0f;
+    float turnAxis = Input.GetAxis("Horizontal");
+    if (Mathf.Abs(turnAxis) > m_deadZone)
+      m_currTurn = turnAxis;
+  }
+
+  void FixedUpdate()
+  {
+
+    //  Hover Force
+    RaycastHit hit;
+    for (int i = 0; i < m_hoverPoints.Length; i++)
+    {
+      var hoverPoint = m_hoverPoints [i];
+      if (Physics.Raycast(hoverPoint.transform.position, 
+                          -Vector3.up, out hit,
+                          m_hoverHeight,
+                          m_layerMask))
+        m_body.AddForceAtPosition(Vector3.up 
+          * m_hoverForce
+          * (1.0f - (hit.distance / m_hoverHeight)), 
+                                  hoverPoint.transform.position);
+      else
+      {
+        if (transform.position.y > hoverPoint.transform.position.y)
+          m_body.AddForceAtPosition(
+            hoverPoint.transform.up * m_hoverForce,
+            hoverPoint.transform.position);
+        else
+          m_body.AddForceAtPosition(
+            hoverPoint.transform.up * -m_hoverForce,
+            hoverPoint.transform.position);
+      }
     }
 
-    private void Update()
+    // Forward
+    if (Mathf.Abs(m_currThrust) > 0)
+      m_body.AddForce(transform.forward * m_currThrust);
+
+    // Turn
+    if (m_currTurn > 0)
     {
-        rB.AddForceAtPosition(Time.deltaTime * transform.TransformDirection(Vector3.forward) * Input.GetAxis("Vertical") * forwardThrust, propulsion.transform.position);
-        rB.AddTorque(Time.deltaTime * transform.TransformDirection(Vector3.up) * Input.GetAxis("Horizontal") * turnThrust);
-
-    }
-
-    private void FixedUpdate()
+      m_body.AddRelativeTorque(Vector3.up * m_currTurn * m_turnStrength);
+    } else if (m_currTurn < 0)
     {
-
-        foreach (GameObject Sensor in sensors)
-        {
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, hoverSensorRange, LayerMask.GetMask("Ground")))
-            {
-                rB.AddForceAtPosition(Time.deltaTime * transform.TransformDirection(Vector3.up) * Mathf.Pow(3f - hit.distance, 2) / 3f * upwardThrust, Sensor.transform.position);
-            }
-        }
-        rB.AddForce(-Time.deltaTime * transform.TransformVector(Vector3.right) * transform.InverseTransformVector(rB.velocity).x * 5f);
+      m_body.AddRelativeTorque(Vector3.up * m_currTurn * m_turnStrength);
     }
-
+  }
 }
