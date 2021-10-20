@@ -22,10 +22,14 @@ public class HoverPlane : MonoBehaviour
 
   void Start()
   {
-    m_body = GetComponent<Rigidbody>();
 
-    m_layerMask = 1 << LayerMask.NameToLayer("Characters");
-    m_layerMask = ~m_layerMask;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        m_body = GetComponent<Rigidbody>();
+
+        m_layerMask = 1 << LayerMask.NameToLayer("Characters");
+        m_layerMask = ~m_layerMask;
   }
 
   void OnDrawGizmos()
