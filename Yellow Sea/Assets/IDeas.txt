@@ -1,0 +1,5 @@
+Cannot walk or hover into grass area because it is too tall - must use the ship to cross 
+
+Light stealth elements if you fly low enough to be in the grass - character has yellow helmut to blend in as it sticks out 
+
+Player has a hover board which is faster then walking but slower then ship, cannot go very high

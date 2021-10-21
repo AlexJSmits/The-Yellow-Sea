@@ -30,6 +30,8 @@ public class HoverPlane : MonoBehaviour
 
     public GameObject playerVisual;
 
+    private Animator m_animator;
+
   void Start()
   {
         m_player = GameObject.FindGameObjectWithTag("Player");
@@ -43,8 +45,9 @@ public class HoverPlane : MonoBehaviour
         m_layerMask = 1 << LayerMask.NameToLayer("Ship");
         m_layerMask = ~m_layerMask;
 
-        this.enabled = false;
+        m_animator = GetComponent<Animator>();
 
+        this.enabled = false;
     }
 
   void OnDrawGizmos()
@@ -91,7 +94,8 @@ public class HoverPlane : MonoBehaviour
         m_currTurn = 0.0f;
         float turnAxis = Input.GetAxis("Horizontal");
         if (Mathf.Abs(turnAxis) > m_deadZone)
-          m_currTurn = turnAxis;
+        m_currTurn = turnAxis;
+        m_animator.SetFloat("Turn", Mathf.MoveTowards(m_animator.GetFloat("Turn"), turnAxis, 5));
 
         if (Input.GetKey(KeyCode.Space) && m_hoverHeight < m_maxHoverHeight)
         {
