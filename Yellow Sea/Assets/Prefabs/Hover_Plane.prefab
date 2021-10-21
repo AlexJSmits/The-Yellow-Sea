@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1915880830}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: ExitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4191290500813362188}
   - component: {fileID: 7736413371739036747}
   - component: {fileID: 248177317454615778}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 446358557939479899}
   - component: {fileID: 5444657160318251989}
   - component: {fileID: 1509335632498985450}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6171638783147668108}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Player_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 1737713989330021736}
   - component: {fileID: 7813560962639044177}
   - component: {fileID: 6688270050113790387}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 7447541685437224200}
   - component: {fileID: 7715563431233600866}
   - component: {fileID: 7537893932481719446}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 9180009357805796515}
   - component: {fileID: 9180009357805796512}
   - component: {fileID: 9180009357805796513}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Blade_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9180009357829829209}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sensor_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 9180009358027173195}
   - component: {fileID: 9180009358027173192}
   - component: {fileID: 9180009358027173193}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Blade_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 9180009358077349154}
   - component: {fileID: 9180009358077349155}
   - component: {fileID: 9180009358077349152}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1400,7 +1400,7 @@ GameObject:
   - component: {fileID: 9180009358191621020}
   - component: {fileID: 5268112122415061409}
   - component: {fileID: 9180009358191621018}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Hover_Plane
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -1453,7 +1453,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9180009358191621021}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b4d62c4386d46f4b9d6db8a6d3081c5, type: 3}
   m_Name: 
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_hoverForce: 100
   m_hoverHeight: 3
   m_maxHoverHeight: 10
-  m_minHoverHeight: 2
+  m_minHoverHeight: 3
   m_hoverPoints:
   - {fileID: 9180009358851006377}
   - {fileID: 9180009357829829214}
@@ -1471,9 +1471,8 @@ MonoBehaviour:
   m_forwardAcl: 400
   m_backwardAcl: 100
   m_turnStrength: 100
-  m_player:
-  - {fileID: 0}
-  - {fileID: 0}
+  m_player: {fileID: 0}
+  m_playerCam: {fileID: 0}
   playerVisual: {fileID: 6495644560153955653}
 --- !u!1 &9180009358195865003
 GameObject:
@@ -1487,7 +1486,7 @@ GameObject:
   - component: {fileID: 9180009358195865014}
   - component: {fileID: 9180009358195865015}
   - component: {fileID: 9180009358195865012}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Blade_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1785,7 +1784,7 @@ GameObject:
   - component: {fileID: 9180009358294764346}
   - component: {fileID: 9180009358294764347}
   - component: {fileID: 9180009358294764344}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Cockpit_Cutoff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3564,7 +3563,7 @@ GameObject:
   - component: {fileID: 9180009358338451722}
   - component: {fileID: 9180009358338451723}
   - component: {fileID: 155883607481490048}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fan_Body (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14741,7 +14740,7 @@ GameObject:
   - component: {fileID: 9180009358569177696}
   - component: {fileID: 9180009358569177697}
   - component: {fileID: 9180009358569177702}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25898,7 +25897,7 @@ GameObject:
   - component: {fileID: 9180009358735588544}
   - component: {fileID: 9180009358735588545}
   - component: {fileID: 9180009358735588550}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Blade_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26194,7 +26193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9180009358835392167}
   - component: {fileID: 9180009358835392166}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GrassInteraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26236,7 +26235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9180009358851006376}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sensor_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26270,7 +26269,7 @@ GameObject:
   - component: {fileID: 9180009358972618288}
   - component: {fileID: 9180009358972618289}
   - component: {fileID: 8457192977502434480}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fan_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37444,7 +37443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9180009359111003400}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sensor_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37477,7 +37476,7 @@ GameObject:
   - component: {fileID: 9180009359312003969}
   - component: {fileID: 9180009359312003974}
   - component: {fileID: 9180009359312003975}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Decal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37775,7 +37774,7 @@ GameObject:
   - component: {fileID: 9180009359321460877}
   - component: {fileID: 9180009359321460866}
   - component: {fileID: 9180009359321460867}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Blade_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38073,7 +38072,7 @@ GameObject:
   - component: {fileID: 9180009359335895300}
   - component: {fileID: 9180009359335895301}
   - component: {fileID: 9180009359335895546}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Blade_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38371,7 +38370,7 @@ GameObject:
   - component: {fileID: 9180009359355232782}
   - component: {fileID: 9180009359355232783}
   - component: {fileID: 9180009359355232780}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Blade_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38666,7 +38665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9180009359579841352}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38704,7 +38703,7 @@ GameObject:
   - component: {fileID: 9180009359666407163}
   - component: {fileID: 9180009359666407160}
   - component: {fileID: 9180009359666407161}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39755,7 +39754,7 @@ GameObject:
   - component: {fileID: 9180009359675695422}
   - component: {fileID: 9180009359675695423}
   - component: {fileID: 3694893754910319239}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fan_Body (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50932,7 +50931,7 @@ GameObject:
   - component: {fileID: 9180009359678291461}
   - component: {fileID: 9180009359678291706}
   - component: {fileID: 9180009359678291707}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Blade_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51227,7 +51226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9180009359718083282}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sensor_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51261,7 +51260,7 @@ GameObject:
   - component: {fileID: 9180009359838883420}
   - component: {fileID: 9180009359838883421}
   - component: {fileID: 504208038648880281}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fan_Body (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

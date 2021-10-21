@@ -10,7 +10,7 @@ public class HoverPlane : MonoBehaviour
       public float m_hoverForce = 9.0f;
       public float m_hoverHeight = 2.0f;
       public float m_maxHoverHeight = 10f;
-    public float m_minHoverHeight = 2f;
+    public float m_minHoverHeight = 3f;
       public GameObject[] m_hoverPoints;
     public GameObject m_exitPoint;
 
@@ -42,6 +42,8 @@ public class HoverPlane : MonoBehaviour
 
         m_layerMask = 1 << LayerMask.NameToLayer("Ship");
         m_layerMask = ~m_layerMask;
+
+        this.enabled = false;
 
     }
 
@@ -93,12 +95,12 @@ public class HoverPlane : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && m_hoverHeight < m_maxHoverHeight)
         {
-            m_hoverHeight += (2f * Time.deltaTime);
+            m_hoverHeight += (3f * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.LeftControl) && m_hoverHeight > m_minHoverHeight)
         {
-            m_hoverHeight -= (2f * Time.deltaTime);
+            m_hoverHeight -= (3f * Time.deltaTime);
         }
     }
 
