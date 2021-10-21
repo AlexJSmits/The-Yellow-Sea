@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1915880829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915880830}
+  m_Layer: 6
+  m_Name: ExitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1915880830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915880829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 0, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9180009358191621020}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2616910903849920343
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6171638783147668108
 Transform:
   m_ObjectHideFlags: 0
@@ -1372,7 +1402,7 @@ GameObject:
   - component: {fileID: 9180009358191621018}
   m_Layer: 6
   m_Name: Hover_Plane
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1396,6 +1426,7 @@ Transform:
   - {fileID: 9180009359718083282}
   - {fileID: 9180009359111003400}
   - {fileID: 6171638783147668108}
+  - {fileID: 1915880830}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1422,21 +1453,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9180009358191621021}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b4d62c4386d46f4b9d6db8a6d3081c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_hoverForce: 100
   m_hoverHeight: 3
+  m_maxHoverHeight: 10
+  m_minHoverHeight: 2
   m_hoverPoints:
   - {fileID: 9180009358851006377}
   - {fileID: 9180009357829829214}
   - {fileID: 9180009359718083283}
   - {fileID: 9180009359111003401}
+  m_exitPoint: {fileID: 1915880829}
   m_forwardAcl: 400
   m_backwardAcl: 100
   m_turnStrength: 100
+  m_player:
+  - {fileID: 0}
+  - {fileID: 0}
+  playerVisual: {fileID: 6495644560153955653}
 --- !u!1 &9180009358195865003
 GameObject:
   m_ObjectHideFlags: 0

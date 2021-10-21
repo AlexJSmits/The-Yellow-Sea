@@ -23,7 +23,7 @@ Material:
     - _AmbientStrength: 0.5
     - _BladeCurve: 2
     - _BladeForward: 0.38
-    - _GrassHeight: 1.5
+    - _GrassHeight: 2
     - _GrassWidth: 0.06
     - _MaxDist: 50
     - _MinDist: 1

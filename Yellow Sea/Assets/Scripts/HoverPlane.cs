@@ -7,37 +7,48 @@ public class HoverPlane : MonoBehaviour
   Rigidbody m_body;
   float m_deadZone = 0.1f;
 
-  public float m_hoverForce = 9.0f;
-  public float m_hoverHeight = 2.0f;
-    public float m_maxHoverHeight = 10f;
+      public float m_hoverForce = 9.0f;
+      public float m_hoverHeight = 2.0f;
+      public float m_maxHoverHeight = 10f;
     public float m_minHoverHeight = 2f;
-    public GameObject[] m_hoverPoints;
+      public GameObject[] m_hoverPoints;
+    public GameObject m_exitPoint;
 
-  public float m_forwardAcl = 100.0f;
-  public float m_backwardAcl = 25.0f;
-  float m_currThrust = 0.0f;
+      public float m_forwardAcl = 100.0f;
+      public float m_backwardAcl = 25.0f;
+      float m_currThrust = 0.0f;
 
-  public float m_turnStrength = 10f;
-  float m_currTurn = 0.0f;
+      public float m_turnStrength = 10f;
+      float m_currTurn = 0.0f;
 
-  int m_layerMask;
+      int m_layerMask;
+
+    public GameObject m_player;
+    public GameObject m_playerCam;
+
+    [Space]
+
+    public GameObject playerVisual;
 
   void Start()
   {
+        m_player = GameObject.FindGameObjectWithTag("Player");
+        m_playerCam = GameObject.FindGameObjectWithTag("PlayerCam");
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         m_body = GetComponent<Rigidbody>();
 
-        m_layerMask = 1 << LayerMask.NameToLayer("Characters");
+        m_layerMask = 1 << LayerMask.NameToLayer("Ship");
         m_layerMask = ~m_layerMask;
-  }
+
+    }
 
   void OnDrawGizmos()
   {
-
-    //  Hover Force
+  
+        //  Hover Force
         RaycastHit hit;
         for (int i = 0; i < m_hoverPoints.Length; i++)
         {
@@ -61,6 +72,10 @@ public class HoverPlane : MonoBehaviour
 	
   void Update()
   {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ExitShip();
+        }
 
         // Main Thrust
         m_currThrust = 0.0f;
@@ -120,13 +135,47 @@ public class HoverPlane : MonoBehaviour
             if (Mathf.Abs(m_currThrust) > 0)
                 m_body.AddForce(transform.forward * m_currThrust);
 
-            // Turn
-            if (m_currTurn > 0)
-            {
-                m_body.AddRelativeTorque(Vector3.up * m_currTurn * m_turnStrength);
-            } else if (m_currTurn < 0)
-            {
-                m_body.AddRelativeTorque(Vector3.up * m_currTurn * m_turnStrength);
-            }
-      }
+        // Turn
+        if (m_currTurn > 0)
+        {
+            m_body.AddRelativeTorque(Vector3.up * m_currTurn * m_turnStrength);
+        } else if (m_currTurn < 0)
+        {
+            m_body.AddRelativeTorque(Vector3.up * m_currTurn * m_turnStrength);
+        }
+  }
+
+    void ExitShip()
+    {
+        //overlap sphere on left and right hand side of the ship 
+        //if no collision detected then player is moved to location and toggled on
+        //ship script is turned off
+
+
+        Collider[] hitColliders = Physics.OverlapSphere(m_exitPoint.transform.position, 1.0f, m_layerMask);
+
+        if (hitColliders.Length == 0)
+        {
+
+            m_player.transform.position = m_exitPoint.transform.position;
+            m_player.transform.rotation = m_exitPoint.transform.rotation;
+
+            m_player.SetActive(true);
+            m_playerCam.SetActive(true);
+
+
+            this.enabled = false;
+        }
+        
+    }
+
+    private void OnEnable()
+    {
+        playerVisual.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        playerVisual.SetActive(false);
+    }
 }

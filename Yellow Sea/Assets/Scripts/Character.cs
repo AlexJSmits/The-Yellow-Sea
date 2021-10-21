@@ -23,12 +23,23 @@ public class Character : MonoBehaviour
     private bool isGrounded;
     private Vector3 velocity;
 
+    public GameObject ship;
+    public GameObject shipCam;
+    public GameObject playerCam;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        ship = GameObject.FindGameObjectWithTag("Ship");
+        shipCam = GameObject.FindGameObjectWithTag("ShipCam");
+        playerCam = GameObject.FindGameObjectWithTag("PlayerCam");
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
+
+
     }
 
     // Update is called once per frame
@@ -45,9 +56,23 @@ public class Character : MonoBehaviour
         {
             velocity.y = -2f;
         }
-
+        
         PlayerMovement();
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 2, LayerMask.GetMask("Ship"));
+
+            if (colliders != null)
+            {
+                shipCam.SetActive(true);
+                ship.GetComponent<HoverPlane>().enabled = true;
+
+                playerCam.SetActive(false);
+                this.gameObject.SetActive(false);
+
+            }
+        }
     }
 
     void PlayerMovement()
